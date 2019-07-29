@@ -1,0 +1,14 @@
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+import HTTPS from './utils/https';
+import 'vuetify/dist/vuetify.min.css';
+import App from './App.vue';
+import router from './router';
+
+Vue.config.productionTip = false;
+Vue.use(Vuetify);
+Vue.prototype.$https = HTTPS;
+new Vue({
+  router,
+  render: h => h(App),
+}).$mount('#app');
